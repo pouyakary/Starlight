@@ -72,7 +72,7 @@
         runAppleScriptSourceCode(
             "tell application \"System Events\"\n" +
                 "tell appearance preferences\n" +
-                "set dark mode to \(status)\n" +
+                    "set dark mode to \(status)\n" +
                 "end tell\n" +
             "end tell"
         )
