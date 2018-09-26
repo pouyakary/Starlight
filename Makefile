@@ -1,10 +1,10 @@
 
-install: install-binary install-deamon
+install: install-binary install-daemon
 
 build: compile-binary
 
-install-deamon:
-	mv ./source/deamon.plist ~/Library/LaunchAgents
+install-daemon:
+	cp ./source/starlight-daemon.plist ~/Library/LaunchAgents
 
 install-binary: compile-binary
 	mv ./starlight /usr/local/bin
