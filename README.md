@@ -4,6 +4,10 @@
 # Starlight
 Starlight is a dark/light mode manager for OS X. It measures the surrounding ambient light and then performs light/dark theme adjustments based on that. Starlight is a daemon server and performs an adjustment task every 10 seconds. Starlight is a very lightweight task and uses 0~0.2% of your CPU and 5 MB of memory.
 
+<center>
+<img src="https://user-images.githubusercontent.com/2157285/46981598-f4537b00-d0e5-11e8-9670-6a776cf1a14a.gif" width="480">
+</center>
+
 ## How to build it?
 You must be using macOS mojave or later (to even have the light/dark possibility) and then you must have Xcode installed (in a version that supports Swift 4.1+). This build system only uses Swift compiler so if you have `swiftc` in such way that it supports `4.1+` you can use it. You also have to have GNU Make installed.
 
