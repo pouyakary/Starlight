@@ -16,10 +16,12 @@
     infix operator =~
 
     func =~ (input: String, pattern: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: "^\(pattern)$", options: [])
-        let matches = regex.matches(in: input,
-                               options: [],
-                                 range: NSRange(location: 0, length: input.count))
+        let regex =
+            try! NSRegularExpression(pattern: "^\(pattern)$", options: [])
+        let matches =
+            regex.matches(in: input,
+                     options: [],
+                       range: NSRange(location: 0, length: input.count))
 
         return matches.count == 1
     }

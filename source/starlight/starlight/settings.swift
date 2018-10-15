@@ -15,7 +15,7 @@
 
     struct Settings: Codable {
         var minimumLux: Int?
-        var intervals: Int?
+        var intervals: UInt32?
         var sunrise: String?
         var sunset: String?
         var wallpapers: DarkLightPaths?
@@ -47,8 +47,10 @@
 //
 
     func appendFactorySettingsToEmptySettings ( baseSettings: Settings ) -> Settings {
-        var settings = baseSettings
-        let factorySettings = generateFactorySettings()
+        var settings =
+            baseSettings
+        let factorySettings =
+            generateFactorySettings( )
 
         func testDateFormat ( _ date: String ) -> Bool {
             return "\\d\\d:\\d\\d" =~ date
@@ -85,15 +87,21 @@
         var settings: Settings
 
         do {
-            let jsonFileString = try loadSettingsFileString( )
+            let jsonFileString =
+                try loadSettingsFileString( )
+
             print( " •• File loaded successfully" )
-            try settings = decodeSettings( settingsJSON: jsonFileString )
+
+            try settings =
+                decodeSettings( settingsJSON: jsonFileString )
+
             print( " •• File decoded successfully" )
             
             
         } catch {
             print( " •• Could not load settings file (~/.starlight.json).\n    Initializing with the factory presets." )
-            settings = generateFactorySettings()
+            settings =
+                generateFactorySettings( )
         }
         
         // done
@@ -105,9 +113,12 @@
 //
 
     func decodeSettings ( settingsJSON: String ) throws -> Settings {
-        let decoder = JSONDecoder( )
-        let jsonData = settingsJSON.data( using: .utf8 )!
-        let settings = try decoder.decode( Settings.self, from: jsonData )
+        let decoder =
+            JSONDecoder( )
+        let jsonData =
+            settingsJSON.data( using: .utf8 )!
+        let settings =
+            try decoder.decode( Settings.self, from: jsonData )
         return settings
     }
 
@@ -116,9 +127,12 @@
 //
 
     func loadSettingsFileString ( ) throws -> String {
-        let homeDirURL = FileManager.default.homeDirectoryForCurrentUser
-        let starlightFileURL = homeDirURL.appendingPathComponent( ".starlight.json" )
-        let contents = try String( contentsOf: starlightFileURL, encoding: .utf8 )
+        let homeDirURL =
+            FileManager.default.homeDirectoryForCurrentUser
+        let starlightFileURL =
+            homeDirURL.appendingPathComponent( ".starlight.json" )
+        let contents =
+            try String( contentsOf: starlightFileURL, encoding: .utf8 )
         return contents
     }
 

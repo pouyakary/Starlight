@@ -37,7 +37,7 @@
 
         while ( true ) {
             setDeviceAppearanceBasedOnLuxValue( settings: settings )
-            sleep( 10 )
+            sleep( settings.intervals! )
         }
     }
 
