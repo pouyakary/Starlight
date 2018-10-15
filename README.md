@@ -45,7 +45,7 @@ Starlight runs with a factory preset, but you can change its settings by putting
     "vscode": {                     // this setting changes the theme of Visual
         "light": "Light Theme",     // Studio Code by changing the value of the
         "dark: "Dark Theme"         // "workbench.colorTheme".
-    },
+    }
 }
 ```
 
