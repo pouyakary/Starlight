@@ -14,7 +14,10 @@ You must be using macOS mojave or later (to even have the light/dark possibility
 This will install `starlight` to your `/usr/local/bin` and the `starlight-daemon.plist` to your `~/Library/LaunchAgents`
 
 ## How to use it?
-Starlight runs with a factory preset, but you can change its settings by putting a
+Starlight runs with a factory preset, but you can change its settings by overriding the settings at `~/.starlight.json`. All the settings are optional, but for the settings that have `dark`/`light` objects, you should provide both the dark and light keys.
+
+> __NOTE__ <br>
+> The `sunrise` - `sunset` settings are not implemented yet.
 
 ```js
 {
