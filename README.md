@@ -55,3 +55,11 @@ Starlight runs with a factory preset, but you can change its settings by overrid
     }
 }
 ```
+
+## Starting and Stopping?
+To start and stop Starlight you can use tho following system commands
+
+```bash
+% launchctl start us.kary.starlight
+% launchctl stop  us.kary.starlight
+```
