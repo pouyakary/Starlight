@@ -48,6 +48,3 @@ Starlight runs with a factory preset, but you can change its settings by putting
     }
 }
 ```
-
-## Ideas for the future versions
-Well I'm hoping to have ways of setting wallpapers based on day/night modes and also things like vscode themes based on that. So there must be a flexible way to do so and I'm working on it.
