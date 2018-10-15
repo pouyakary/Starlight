@@ -16,7 +16,7 @@ This will install `starlight` to your `/usr/local/bin` and the `starlight-daemon
 ## How to use it?
 Starlight runs with a factory preset, but you can change its settings by putting a
 
-```
+```js
 {
     "intervals":    10,             // The time interval in seconds that starlight
                                     // measures, performs changes and goes to idle
@@ -35,7 +35,7 @@ Starlight runs with a factory preset, but you can change its settings by putting
 
     "wallpapers": {                 // By setting this, starlight changes the
         "light": "~/light.png",     // wallpaper. You have to specify the path of
-        "dark": "~/dark.png"        // the light and dark theme.
+        "dark":  "~/dark.png"       // the light and dark theme.
     },                              //
                                     // NOTE: Remember that this changes "all" the
                                     // wallpapers of all the screens and monitors.
@@ -44,7 +44,7 @@ Starlight runs with a factory preset, but you can change its settings by putting
 
     "vscode": {                     // this setting changes the theme of Visual
         "light": "Light Theme",     // Studio Code by changing the value of the
-        "dark: "Dark Theme"         // "workbench.colorTheme".
+        "dark":  "Dark Theme"       // "workbench.colorTheme"
     }
 }
 ```
