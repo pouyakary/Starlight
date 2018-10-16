@@ -14,9 +14,10 @@
 //
 
     func setDarkModeTo( status: Bool, settings: Settings ) {
-        setMacOSApperanceDarkModeTo( status: status )
-        changeMacOSWallpaper( status: status, settings: settings)
-        setVisualStudioCodeThemeSettings( status: status, settings: settings )
+        let queue = DispatchQueue.global(qos: .userInitiated)
+        queue.async { setMacOSApperanceDarkModeTo( status: status ) }
+        queue.async { changeMacOSWallpaper( status: status, settings: settings) }
+        queue.async { setVisualStudioCodeThemeSettings( status: status, settings: settings ) }
     }
 
 //
