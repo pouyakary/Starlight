@@ -22,35 +22,35 @@ Starlight runs with a factory preset, but you can change its settings by overrid
 
 ```js
 {
-    "intervals":        10,                 // The time interval in seconds that starlight
-                                            // measures, performs changes and goes to idle
-                                            // mode again.
+    "intervals":            10,                 // The time interval in seconds that starlight
+                                                // measures, performs changes and goes to idle
+                                                // mode again.
 
 
-    "minimumLux":       75000,              // Minimum lux amount to be in the light mode.
-                                            // if the amount that is measured is under the
-                                            // minimumLux amount, then it will change to
-                                            // dark mode and in other cases back to light.
+    "minimumLux":           75000,              // Minimum lux amount to be in the light mode.
+                                                // if the amount that is measured is under the
+                                                // minimumLux amount, then it will change to
+                                                // dark mode and in other cases back to light.
 
 
-    "sunset":           "18:00",            // By setting these two times, from sunset to
-    "sunrise":          "06:00",            // sunrise, starlight forces dark mode.
-                                            // Please notice the HH:mm format of the time
-                                            // any other format is ignored
+    "sunset":               "18:00",            // By setting these two times, from sunset to
+    "sunrise":              "06:00",            // sunrise, starlight forces dark mode.
+                                                // Please notice the HH:mm format of the time
+                                                // any other format is ignored
 
 
-    "wallpapers": {                         // By setting this, starlight changes the
-        "light":        "~/light.png",      // wallpaper. You have to specify the path of
-        "dark":         "~/dark.png"        // the light and dark theme.
-    },                                      //
-                                            // NOTE: Remember that this changes "all" the
-                                            // wallpapers of all the screens and monitors.
-                                            // so use it with caution.
+    "wallpapers": {                             // By setting this, starlight changes the
+        "light":            "~/light.png",      // wallpaper. You have to specify the path of
+        "dark":             "~/dark.png"        // the light and dark theme.
+    },                                          //
+                                                // NOTE: Remember that this changes "all" the
+                                                // wallpapers of all the screens and monitors.
+                                                // so use it with caution.
 
 
-    "vscode": {                             // this setting changes the theme of Visual
-        "light":        "Light Theme",      // Studio Code by changing the value of the
-        "dark":         "Dark Theme"        // "workbench.colorTheme"
+    "vscode": {                                 // this setting changes the theme of Visual
+        "light":            "Light Theme",      // Studio Code by changing the value of the
+        "dark":             "Dark Theme"        // "workbench.colorTheme"
     }
 }
 ```
