@@ -20,9 +20,6 @@ This will install `starlight` to your `/usr/local/bin` and the `starlight-daemon
 ## How to use it?
 Starlight runs with a factory preset, but you can change its settings by overriding the settings at `~/.starlight.json`. All the settings are optional, but for the settings that have `dark`/`light` objects, you should provide both the dark and light keys.
 
-> __NOTE__ <br>
-> The `sunrise` - `sunset` settings are not implemented yet.
-
 ```js
 {
     "intervals":    10,             // The time interval in seconds that starlight
@@ -38,6 +35,8 @@ Starlight runs with a factory preset, but you can change its settings by overrid
 
     "sunset":       "18:00",        // By setting these two times, from sunset to
     "sunrise":      "06:00",        // sunrise, starlight forces dark mode.
+                                    // Please notice the HH:mm format of the time
+                                    // any other format is ignored
 
 
     "wallpapers": {                 // By setting this, starlight changes the
