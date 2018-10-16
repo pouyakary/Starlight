@@ -62,7 +62,22 @@
             return -1
         }
         
-        return Int( values[ 0 ] )
+        let result = Int( values[ 0 ] )
+        
+        print(" • Ambient Light measured to be \( result ) lx.")
+        
+        return result
+    }
+
+//
+// ─── CLEAR SCREEn ───────────────────────────────────────────────────────────────
+//
+
+    func clearScreen ( ) {
+        let clearScreen = Process()
+        clearScreen.launchPath = "/usr/bin/clear"
+        clearScreen.arguments = [ ]
+        clearScreen.launch()
     }
 
 // ────────────────────────────────────────────────────────────────────────────────

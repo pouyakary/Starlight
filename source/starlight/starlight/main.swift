@@ -10,33 +10,21 @@
     import Foundation
 
 //
-// ─── DEVICE APPEARANCE BASED ON LUX ─────────────────────────────────────────────
-//
-
-    func setDeviceAppearanceBasedOnLuxValue ( settings: Settings ) {
-        let ambientLight = getAmbientLightInLux( )
-        print(" • Ambient Light measured to be \(ambientLight) lx.")
-        
-        if ( ambientLight > settings.minimumLux! ) {
-            setDarkModeTo( status: false, settings: settings )
-        } else {
-            setDarkModeTo( status: true, settings: settings )
-        }
-    }
-
-//
 // ─── MAIN ───────────────────────────────────────────────────────────────────────
 //
 
     main( ); func main ( ) {
-        print(" Starlight ✤ – Copyright 2018-present, Pouya Kary. All rights reserved\n")
-
-        let settings = loadSettings( )
+        print( " Starlight ✤ – Copyright 2018-present,"
+             + " Pouya Kary. All rights reserved"
+             )
         
-        print()
-
         while ( true ) {
-            setDeviceAppearanceBasedOnLuxValue( settings: settings )
+            print( )
+
+            let settings = loadSettings( )
+            let status = computeStatus( settings: settings )
+
+            setDarkModeTo( status: status, settings: settings )
             sleep( settings.intervals! )
         }
     }
