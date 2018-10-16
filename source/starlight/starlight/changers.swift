@@ -57,7 +57,7 @@
 //
 
     func setVisualStudioCodeThemeSettings ( status: Bool, settings: Settings ) {
-        if settings.vscode == nil || settings.vscode!.light == nil || settings.vscode!.dark == nil {
+        if settings.vscode == nil || settings.vscode?.light == nil || settings.vscode?.dark == nil {
             return
         }
 
