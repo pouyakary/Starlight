@@ -20,8 +20,7 @@
             scriptObject.executeAndReturnError( &error )
             
             if (error != nil) {
-                print( " •• Failed to execute apple script: \"\( source )\"" )
-                exit( 1 )
+                print( " ••• Failed to execute apple script: \"\( source )\"" )
             }
         }
         
@@ -34,7 +33,7 @@
 
     func getAmbientLightInLux() -> Int {
         guard let serviceType = IOServiceMatching("AppleLMUController") else {
-            debugPrint(" •• No ambient light sensor")
+            debugPrint(" ••• No ambient light sensor")
             return -1
         }
         
@@ -47,7 +46,7 @@
         // open io connection
         var dataPort: io_connect_t = 0
         guard IOServiceOpen(service, mach_task_self_, 0, &dataPort) == KERN_SUCCESS else {
-            debugPrint(" •• Coult not read ambient light sensor (1)")
+            debugPrint(" ••• Coult not read ambient light sensor (1)")
             return -1
         }
         
@@ -58,7 +57,7 @@
         let zero: UnsafeMutablePointer<Int> = UnsafeMutablePointer<Int>.allocate(capacity: 8)
         
         guard IOConnectCallMethod( dataPort, 0, nil, 0, nil, 0, values, &outputs, nil, zero ) == KERN_SUCCESS else {
-            debugPrint( " •• Could not read ambient light sensor (2)" )
+            debugPrint( " ••• Could not read ambient light sensor (2)" )
             return -1
         }
         

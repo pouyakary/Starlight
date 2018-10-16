@@ -90,7 +90,7 @@
                                  encoding: .utf8)
 
         } catch let error {
-            print( " ✕ Failed to change the theme of Visual Studio Code" )
+            print( " ••• Failed to change the theme of Visual Studio Code" )
             print( error.localizedDescription )
         }
     }
