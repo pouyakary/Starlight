@@ -53,7 +53,7 @@
             generateFactorySettings( )
 
         func testDateFormat ( _ date: String ) -> Bool {
-            return "\\d\\d:\\d\\d" =~ date
+            return date =~ "\\d\\d\\:\\d\\d"
         }
     
     
@@ -66,12 +66,12 @@
             settings.intervals = factorySettings.intervals
         }
         
-        if !( settings.sunrise != nil && testDateFormat( settings.sunrise! ) ) {
-            settings.sunrise = factorySettings.sunrise
+        if settings.sunrise != nil && !testDateFormat( settings.sunrise! ) {
+            settings.sunrise = nil
         }
         
-        if !( settings.sunset != nil && !testDateFormat( settings.sunset! ) ) {
-            settings.sunset = factorySettings.sunset
+        if settings.sunset != nil && !testDateFormat( settings.sunset! ) {
+            settings.sunset = nil
         }
 
         
