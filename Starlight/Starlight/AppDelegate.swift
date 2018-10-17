@@ -8,12 +8,16 @@
 
 import Cocoa
 
+var server = StarlightServer( )
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        server.start()
     }
+    
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        server.stop()
     }
 }

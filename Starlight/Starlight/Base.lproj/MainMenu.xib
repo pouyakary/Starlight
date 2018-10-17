@@ -11,7 +11,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Starlight" customModuleProvider="target">
             <connections>
                 <outlet property="AutomaticButton" destination="OO4-BL-X4U" id="cXW-R2-SLa"/>
@@ -21,6 +21,11 @@
         <customObject id="d9X-Xe-RcK" customClass="StatusMenuController" customModule="Starlight" customModuleProvider="target">
             <connections>
                 <outlet property="AboutView" destination="qAC-hk-UuY" id="N0V-oG-eZI"/>
+                <outlet property="AmbientLightLabel" destination="U18-YJ-PGt" id="FUA-q7-bc5"/>
+                <outlet property="AutomaticOptionItem" destination="OO4-BL-X4U" id="qUv-sD-ZtT"/>
+                <outlet property="DarkOptionItem" destination="bIr-W6-NvU" id="ZvF-Mu-6T7"/>
+                <outlet property="LaunchAtLoginItem" destination="9uZ-G3-fNQ" id="4XO-Kw-NEY"/>
+                <outlet property="LightOptionItem" destination="8c6-RS-D1c" id="573-hr-Sdp"/>
                 <outlet property="StarlightMenu" destination="qYj-f5-WUl" id="998-xi-dse"/>
             </connections>
         </customObject>
@@ -32,24 +37,42 @@
                 <menuItem isSeparatorItem="YES" id="ZpU-V0-Qce"/>
                 <menuItem title="Automatic" state="on" id="OO4-BL-X4U">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onSetStateToAutomatic:" target="d9X-Xe-RcK" id="hPh-eu-tjZ"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Light" id="8c6-RS-D1c">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onSetStateToLight:" target="d9X-Xe-RcK" id="xYZ-gt-796"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Dark" id="bIr-W6-NvU">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onSetStateToDark:" target="d9X-Xe-RcK" id="YK9-ec-Kec"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="JAa-Us-VwI"/>
                 <menuItem title="Launch at Login" state="on" id="9uZ-G3-fNQ">
                     <attributedString key="attributedTitle"/>
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onLaunchAtLoginItemClicked:" target="d9X-Xe-RcK" id="frJ-35-0CA"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Open Config File" id="JpO-1y-JIj">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onOpenConfigFile:" target="d9X-Xe-RcK" id="ZkL-fQ-wby"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="0Eq-LB-pt3"/>
                 <menuItem title="Starlight's Website" id="gci-kg-RCx">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onOpenWebsite:" target="d9X-Xe-RcK" id="4Z8-Jn-naG"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="voc-GZ-I6t"/>
                 <menuItem title="Quit" id="cVK-6f-cxB">
@@ -59,14 +82,14 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-325" y="-58"/>
+            <point key="canvasLocation" x="-91" y="175"/>
         </menu>
         <customView id="qAC-hk-UuY">
-            <rect key="frame" x="0.0" y="0.0" width="180" height="172"/>
+            <rect key="frame" x="0.0" y="0.0" width="174" height="172"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YQ5-7B-CrL">
-                    <rect key="frame" x="0.0" y="82" width="180" height="80"/>
+                    <rect key="frame" x="0.0" y="82" width="174" height="80"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="Uw8-Tj-4tb"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="v9l-ow-0n2"/>
@@ -74,7 +97,7 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="starlightIcon" id="HSb-kx-KKP"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LoI-4d-1oV">
-                    <rect key="frame" x="-2" y="53" width="184" height="33"/>
+                    <rect key="frame" x="-2" y="53" width="178" height="33"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="yZU-ny-e7G"/>
                     </constraints>
@@ -85,7 +108,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="glj-h6-l9J">
-                    <rect key="frame" x="-2" y="39" width="184" height="13"/>
+                    <rect key="frame" x="-2" y="39" width="178" height="13"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="13" id="FTS-S4-cVU"/>
                         <constraint firstAttribute="height" constant="13" id="maQ-q7-HOB"/>
@@ -97,14 +120,14 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U18-YJ-PGt">
-                    <rect key="frame" x="-2" y="7" width="184" height="22"/>
+                <textField autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U18-YJ-PGt">
+                    <rect key="frame" x="-2" y="7" width="178" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="O1X-rr-bqs"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Ambient Light: 36500 lx" id="8Yq-qn-ldU">
-                        <font key="font" metaFont="system" size="11"/>
-                        <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" alignment="center" title="Ambient Light: 36500 lx" usesSingleLineMode="YES" id="8Yq-qn-ldU">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
@@ -123,7 +146,7 @@
                 <constraint firstItem="U18-YJ-PGt" firstAttribute="leading" secondItem="qAC-hk-UuY" secondAttribute="leading" id="tvT-53-fx1"/>
                 <constraint firstItem="glj-h6-l9J" firstAttribute="leading" secondItem="qAC-hk-UuY" secondAttribute="leading" id="zg4-nt-uaG"/>
             </constraints>
-            <point key="canvasLocation" x="148" y="192"/>
+            <point key="canvasLocation" x="-91" y="-74"/>
         </customView>
     </objects>
     <resources>
