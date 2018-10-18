@@ -22,7 +22,6 @@ class StatusMenuController: NSObject {
         self.clientSettings = ClientSettings( )
         self.queue = DispatchQueue.global(qos: .userInitiated)
         self.statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        self.clientSettings.mode = .Automatic
     }
 
 
@@ -38,6 +37,7 @@ class StatusMenuController: NSObject {
         queue.async { self.updateAmbientLightLoop( ) }
         
         setMode( to: clientSettings.mode )
+        setLaunchAtLoginMode()
     }
     
     
@@ -68,6 +68,11 @@ class StatusMenuController: NSObject {
                 DarkOptionItem.state = .on
                 break
         }
+    }
+    
+    
+    func setLaunchAtLoginMode ( ) {
+        LaunchAtLoginItem.state = self.clientSettings.launchAtLogin ? .on : .off
     }
     
     
@@ -105,6 +110,7 @@ class StatusMenuController: NSObject {
     
     @IBAction func onLaunchAtLoginItemClicked(_ sender: Any) {
         self.clientSettings.launchAtLogin = !self.clientSettings.launchAtLogin
+        setLaunchAtLoginMode( )
     }
     
 }

@@ -22,7 +22,8 @@ class ClientSettings {
     
     var mode: Mode {
         get {
-            return Mode.init( rawValue: defaults.value( forKey: ModeKey )! as! String ) ?? Mode.Automatic
+            let defaultMode = defaults.value( forKey: ModeKey )! as! String
+            return Mode.init( rawValue: defaultMode ) ?? Mode.Automatic
         }
         set ( value ) {
             defaults.set( value.rawValue, forKey: ModeKey )
