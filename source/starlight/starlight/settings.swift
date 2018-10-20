@@ -15,11 +15,19 @@
 
     struct Settings: Codable {
         var minimumLux: Int?
-        var intervals: UInt32?
-        var sunrise: String?
-        var sunset: String?
+        var intervals:  UInt32?
+        
+        var sunrise:    String?
+        var sunset:     String?
+        var location:   Coordinates?
+        
         var wallpapers: DarkLightPaths?
-        var vscode: DarkLightPaths?
+        var vscode:     DarkLightPaths?
+    }
+
+    struct Coordinates: Codable {
+        var latitude:    Double
+        var longitude:   Double
     }
 
     struct DarkLightPaths: Codable {
@@ -35,18 +43,19 @@
     func generateFactorySettings ( ) -> Settings {
         return Settings( minimumLux:    75000
                        , intervals:     10
-                       , sunrise:       "06:00"
-                       , sunset:        "18:00"
+                       , sunrise:       nil
+                       , sunset:        nil
+                       , location:      nil
                        , wallpapers:    nil
                        , vscode:        nil
                        )
     }
 
 //
-// ─── APPEND FACTORY SETTINGS ────────────────────────────────────────────────────
+// ─── CHECK SETTINGS ─────────────────────────────────────────────────────────────
 //
 
-    func appendFactorySettingsToEmptySettings ( baseSettings: Settings ) -> Settings {
+    func checkSettings ( baseSettings: Settings ) -> Settings {
         var settings =
             baseSettings
         let factorySettings =
@@ -57,23 +66,36 @@
         }
     
     
-        // tests and replacements
+        // lux
         if settings.minimumLux == nil {
             settings.minimumLux = factorySettings.minimumLux
         }
         
+        // intervals
         if settings.intervals == nil {
             settings.intervals = factorySettings.intervals
         }
         
-        if settings.sunrise != nil && !testDateFormat( settings.sunrise! ) {
-            settings.sunrise = nil
+        // sunset / sunrise
+        if settings.sunrise != nil {
+            if settings.sunrise == "auto" {
+                if settings.location == nil {
+                    settings.sunrise = nil
+                }
+            } else if !testDateFormat( settings.sunrise! ) {
+                settings.sunrise = nil
+            }
         }
         
-        if settings.sunset != nil && !testDateFormat( settings.sunset! ) {
-            settings.sunset = nil
+        if settings.sunset != nil {
+            if settings.sunset == "auto" {
+                if settings.location == nil {
+                    settings.sunset = nil
+                }
+            } else if !testDateFormat( settings.sunset! ) {
+                settings.sunset = nil
+            }
         }
-
         
         // done
         return settings
@@ -90,16 +112,22 @@
             let jsonFileString =
                 try loadSettingsFileString( )
 
-            print( " •• File loaded successfully" )
+            print( " •• Settings loaded successfully" )
 
             try settings =
                 decodeSettings( settingsJSON: jsonFileString )
 
-            print( " •• File decoded successfully" )
+            print( " •• Settings decoded successfully" )
+            
+            settings =
+                checkSettings( baseSettings: settings )
+            
+            print( " •• Settings checked" )
             
             
         } catch {
             print( " •• Could not load settings file (~/.starlight.json).\n    Initializing with the factory presets." )
+            print( error )
             settings =
                 generateFactorySettings( )
         }
