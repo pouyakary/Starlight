@@ -26,6 +26,8 @@ Starlight runs with a factory preset, but you can change its settings by overrid
                                                 // JSON does not accept comments. So do not
                                                 // copy this as is.
 
+
+
     "intervals":            10,                 // The time interval in seconds that starlight
                                                 // measures, performs changes and goes to idle
                                                 // mode again.
