@@ -8,6 +8,7 @@
 //
 
     import Foundation
+    import CoreLocation
 
 //
 // ─── COMPUTE STATUS ─────────────────────────────────────────────────────────────
