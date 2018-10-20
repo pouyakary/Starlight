@@ -37,6 +37,25 @@ Starlight runs with a factory preset, but you can change its settings by overrid
     "sunrise":              "06:00",            // sunrise, starlight forces dark mode.
                                                 // Please notice the HH:mm format of the time
                                                 // any other format is ignored
+                                                //
+    "location": {                               // Starlight can also compute the sunrise or
+        "latitude":         12.3456,            // sunset for you. To do so you can set the
+        "longitude":        65.7890             // sunrise and/or sunset to value "auto" and
+    },                                          // specify your location as in the "location"
+                                                // property. You can use services like Google
+                                                // Maps, Apple Maps, OpenStreet Maps, et cetera
+                                                // to find out your location.
+                                                //
+                                                // FYI: Your location can be computed by mac's
+                                                // CoreLocation API, however this API needs
+                                                // app signing and therefore is not suitable
+                                                // for open source nature of starlight. Also
+                                                // this location is only needed to determine
+                                                // timezone location which if you don't travel
+                                                // in such way that needs to change your time-
+                                                // zone that much; is probably a one time setup.
+                                                // and so not using location APIs is a lot better
+                                                // for the battery performance.
 
 
     "wallpapers": {                             // By setting this, starlight changes the
