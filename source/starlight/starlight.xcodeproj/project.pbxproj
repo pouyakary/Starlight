@@ -12,6 +12,7 @@
 		A603F28C215CFC7700C0DF06 /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A603F28B215CFC7700C0DF06 /* settings.swift */; };
 		A63BDDCC2175011500DC79D7 /* regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63BDDCB2175011500DC79D7 /* regex.swift */; };
 		A645DE592174DC5E00E875D4 /* changers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A645DE582174DC5E00E875D4 /* changers.swift */; };
+		A69FC155217B68CB0030B5F7 /* solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FC154217B68CB0030B5F7 /* solar.swift */; };
 		A6D9BE01217600D800B2907A /* status.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D9BE00217600D800B2907A /* status.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		A603F28B215CFC7700C0DF06 /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
 		A63BDDCB2175011500DC79D7 /* regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regex.swift; sourceTree = "<group>"; };
 		A645DE582174DC5E00E875D4 /* changers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changers.swift; sourceTree = "<group>"; };
+		A69FC154217B68CB0030B5F7 /* solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solar.swift; sourceTree = "<group>"; };
 		A6D9BE00217600D800B2907A /* status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = status.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 				A603F28B215CFC7700C0DF06 /* settings.swift */,
 				A645DE582174DC5E00E875D4 /* changers.swift */,
 				A63BDDCB2175011500DC79D7 /* regex.swift */,
+				A69FC154217B68CB0030B5F7 /* solar.swift */,
 			);
 			path = starlight;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A63BDDCC2175011500DC79D7 /* regex.swift in Sources */,
+				A69FC155217B68CB0030B5F7 /* solar.swift in Sources */,
 				A645DE592174DC5E00E875D4 /* changers.swift in Sources */,
 				A603F283215CFA7900C0DF06 /* main.swift in Sources */,
 				A603F28A215CFAEF00C0DF06 /* utils.swift in Sources */,
