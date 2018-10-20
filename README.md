@@ -87,3 +87,9 @@ To start and stop Starlight you can use tho following system commands
 % launchctl start us.kary.starlight
 % launchctl stop  us.kary.starlight
 ```
+
+## Thanks a lot to
+
+- [Jeroen Wesbeek](https://github.com/4np) for his [gist on accessing mac's ambient light sensor](https://gist.github.com/4np/14e8d996b659795b0572a4c45159c174) which is the how Starlight reads the surrounding ambient light.
+
+- [Chris Howell](https://github.com/ceeK) for his [Solar Library](https://github.com/ceeK/Solar) that made it possible to have automatic sunrise/sunset scheduling in Starlight.
