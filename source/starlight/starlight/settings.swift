@@ -16,6 +16,7 @@
     struct Settings: Codable {
         var minimumLux: Int?
         var intervals:  UInt32?
+        var samples:    Int?
         
         var sunrise:    String?
         var sunset:     String?
@@ -43,6 +44,7 @@
     func generateFactorySettings ( ) -> Settings {
         return Settings( minimumLux:    75000
                        , intervals:     10
+                       , samples:       10
                        , sunrise:       nil
                        , sunset:        nil
                        , location:      nil
@@ -74,6 +76,11 @@
         // intervals
         if settings.intervals == nil {
             settings.intervals = factorySettings.intervals
+        }
+        
+        // sample rate
+        if settings.samples == nil {
+            settings.samples = factorySettings.samples
         }
         
         // sunset / sunrise
