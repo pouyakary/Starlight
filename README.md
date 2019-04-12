@@ -29,14 +29,20 @@ Starlight runs with a factory preset, but you can change its settings by overrid
 
 
     "intervals":            10,                 // The time interval in seconds that starlight
-                                                // measures, performs changes and goes to idle
-                                                // mode again.
+                                                // performs changes.
 
 
     "minimumLux":           75000,              // Minimum lux amount to be in the light mode.
                                                 // if the amount that is measured is under the
                                                 // minimumLux amount, then it will change to
                                                 // dark mode and in other cases back to light.
+
+    "samples":              10,                 // The rate of samples that each interval does
+                                                // For example in an interval of 30 with the
+                                                // sample rate of 10, Starlight measures the
+                                                // light in every 3 seconds and in the end of
+                                                // intervals performs the changes based on the
+                                                // average of the 10 measurements.
 
 
     "sunset":               "18:00",            // By setting these two times, from sunset to
