@@ -4,7 +4,7 @@ install: install-binary install-daemon install-run-for-the-first-time
 build: compile-binary
 
 install-daemon:
-	cp ./source/starlight-daemon.plist ~/Library/LaunchAgents
+	launchctl load ./source/starlight-daemon.plist 
 
 install-binary: compile-binary
 	mv ./main /usr/local/bin/starlight
