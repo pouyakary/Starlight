@@ -1,7 +1,6 @@
 
 <img src="https://user-images.githubusercontent.com/2157285/46095220-e38ba580-c1c8-11e8-94dc-730d14f834c8.png" width="200">
 
-<<<<<<< HEAD
 # Starlight
 Starlight is the system dark/light appearance manager for macOS Mojave and later. It does measure time and ambient light periodically and then performs system-wide and specific changes of themes for you. For the time being it can change the system appearance, wallpapers, and vscode themes.
 
