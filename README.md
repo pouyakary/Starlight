@@ -1,6 +1,7 @@
 
 <img src="https://user-images.githubusercontent.com/2157285/46095220-e38ba580-c1c8-11e8-94dc-730d14f834c8.png" width="200">
 
+<<<<<<< HEAD
 # Starlight
 Starlight is the system dark/light appearance manager for macOS Mojave and later. It does measure time and ambient light periodically and then performs system-wide and specific changes of themes for you. For the time being it can change the system appearance, wallpapers, and vscode themes.
 
@@ -99,4 +100,3 @@ To start and stop Starlight you can use tho following system commands
 - [Jeroen Wesbeek](https://github.com/4np) for his [gist on accessing mac's ambient light sensor](https://gist.github.com/4np/14e8d996b659795b0572a4c45159c174) which is the how Starlight reads the surrounding ambient light.
 
 - [Chris Howell](https://github.com/ceeK) for his [Solar Library](https://github.com/ceeK/Solar) that made it possible to have automatic sunrise/sunset scheduling in Starlight.
-
